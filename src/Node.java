@@ -7,5 +7,9 @@ public class Node {
         this.siguiente = null;
     }
 
-
+    // AGREGA ESTO AL FINAL DE LA CLASE:
+    @Override
+    public String toString() {
+        return this.dato != null ? this.dato.toString() : "null";
+    }
 }
