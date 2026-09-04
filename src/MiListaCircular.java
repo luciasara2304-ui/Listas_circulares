@@ -27,13 +27,49 @@ public class MiListaCircular implements ListInterface {
         this.size = 0;
     }
 
-    public Object getHead(){}
+    public Object getHead(){
+        return this.cabeza;
+    }
 
-    public Object getTail(){}
+    public Object getTail(){
+        return this.cola;
+    }
 
-    public Object get(Node node){}
+    public Object get(Node node){
+        if (isEmpty() || node == null) return null;
 
-    public Node search(Object object){}
+        Node actual = this.cabeza;
+        do {
+            if (actual == node || actual.dato == node) {
+                Object valor = actual.dato;
+                while (valor instanceof Node) {
+                    valor = ((Node) valor).dato;
+                }
+                return valor;
+            }
+            actual = actual.siguiente;
+        } while (actual != this.cabeza);
+
+        return null;
+    }
+
+    public Node search(Object object){
+        if (isEmpty() || object == null) return null;
+
+        Node actual = this.cabeza;
+        do {
+            Object valor = actual.dato;
+            while (valor instanceof Node) {
+                valor = ((Node) valor).dato;
+            }
+            if (actual == object || valor.equals(object)) {
+                return actual;
+            }
+            actual = actual.siguiente;
+        } while (actual != this.cabeza);
+
+        return null;
+    }
 
     public boolean add(Object object){}
 

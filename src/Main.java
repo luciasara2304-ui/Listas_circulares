@@ -16,6 +16,14 @@ public class Main {
         System.out.println("¿Está vacía?: " + lista.isEmpty());
         System.out.println("Tamaño: " + lista.getSize());
 
+        System.out.println("Obtener la cabeza: " + ((Node) lista.getHead()).dato);
+        System.out.println("Obtener la cola: " + ((Node) lista.getTail()).dato);
+        System.out.println("Dato del nodo 2: " + lista.get(n2));
+
+        lista.add("Circular 5");
+        System.out.println("Nodo encontrado: " + lista.get(lista.search("Circular 3")));
+
+
         lista.clear();
         System.out.println("DESPUES DE VACIAR LA LISTA ");
         System.out.println("¿Está vacía?: " + lista.isEmpty());
